@@ -9,7 +9,7 @@
 - CSS
 - VS code
 
-## emo video
+## Demo video
 
 - [Facebook](https://facebook.com/ebesong.as)
 - [WhatsApp](https://wa.me/+237651606806)
