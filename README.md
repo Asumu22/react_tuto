@@ -16,4 +16,4 @@
 - [Github](https://github.com/Asumu22)
 
 ## Demo video
-![Watch Now](../portfolio/src/components/demo%20video/demo.mp4)
+![Watch Now](src/components/demo%20video/demo.mp4)
