@@ -7,6 +7,7 @@
 
 - React
 - CSS
+- HTML
 - VS code
 
 ## Let's connect
