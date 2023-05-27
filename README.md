@@ -9,7 +9,7 @@
 - CSS
 - VS code
 
-## Demo video
+## Let's connect
 
 - [Facebook](https://facebook.com/ebesong.as)
 - [WhatsApp](https://wa.me/+237651606806)
