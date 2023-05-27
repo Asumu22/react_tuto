@@ -9,11 +9,11 @@
 - CSS
 - VS code
 
-## emo video
+## Let's connect
 
 - [Facebook](https://facebook.com/ebesong.as)
 - [WhatsApp](https://wa.me/+237651606806)
 - [Github](https://github.com/Asumu22)
 
 ## Demo video
-![Watch Now](../portfolio/src/components/demo%20video/demo.mp4)
+![Watch Now](src/components/demo%20video/demo.mp4)
