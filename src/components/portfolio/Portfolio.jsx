@@ -1,44 +1,30 @@
-import React from 'react';
-import IMG3 from '../../assets/shelter.png';
-import IMG5 from '../../assets/news.png';
-import IMG6 from '../../assets/math.png';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 import './portfolio.css';
 
 const Portfolio = () => {
-  const soloProjects = [
-    
-    {
-      id: 4,
-      title: 'Shelter',
-      img: IMG3,
-      description:
-        'Fully responsive interactive website built based on Figma design',
-      technologies: 'JavaScript | CSS',
-      link: '#',
-      github: 'https://github.com/Asumu22',
-    },
-    {
-      id: 5,
-      title: 'World News',
-      img: IMG5,
-      description:
-        'Fully responsive interactive website built based on Adobe XD design',
-      technologies: 'JavaScript | CSS',
-      link: '#',
-      github: 'https://github.com/Asumu22',
-    },
-    {
-      id: 6,
-      title: 'Homeroom',
-      img: IMG6,
-      description:
-        'Real-world group project which is still in progress and will provide educational platform for students',
-      technologies: 'Dart | Node js',
-      link: '#',
-      github: 'https://github.com/Asumu22',
-    },
-  ];
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get('https://dull-gray-meerkat-shoe.cyclic.app/projects')
+      .then(response => {
+        const formattedData = response.data.data.map(item => ({
+          id: item._id,
+          image: item.projectImage,
+          title: item.title,
+          github: item.github,
+          demo: item.link,
+          technologies: item.technologies,
+          description: item.description
+        }));
+        setData(formattedData);
+      })
+      .catch(error => {
+        console.error('Error fetching portfolio data:', error);
+      });
+  }, []);
 
   return (
     <section id="portfolio">
@@ -46,19 +32,19 @@ const Portfolio = () => {
       <h2>Portfolio</h2>
 
       <div className="container portfolio__container">
-        {soloProjects.map((pro) => (
-          <article className="portfolio__item" key={pro.id}>
+      {data.map(({ id, image, title, github, demo, description, technologies }) => (
+          <article className="portfolio__item" key={id}>
             <div className="portfolio__item-image">
-              <img src={pro.img} alt={pro.title} />
+              <img src={image} alt={title} />
             </div>
             <div className="portfolio__item-content">
-              <h3>{pro.title}</h3>
-              <p>{pro.description}</p>
-              <p>{pro.technologies}</p>
+              <h3>{title}</h3>
+              <p>{description}</p>
+              <p>{technologies}</p>
             </div>
             <div className="portfolio__item-cta">
               <a
-                href={pro.github}
+                href={github}
                 target="_blank"
                 className="btn"
                 rel="noreferrer"
@@ -66,7 +52,7 @@ const Portfolio = () => {
                 GitHub
               </a>
               <a
-                href={pro.link}
+                href={demo}
                 target="_blank"
                 className="btn btn-primary"
                 rel="noreferrer"
