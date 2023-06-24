@@ -8,14 +8,14 @@ const Portfolio = () => {
 
   useEffect(() => {
     axios
-      .get('https://dull-gray-meerkat-shoe.cyclic.app/projects')
+      .get('https://dull-gray-meerkat-shoe.cyclic.app/api/portfolio')
       .then(response => {
         const formattedData = response.data.data.map(item => ({
           id: item._id,
-          image: item.projectImage,
+          image: item.image,
           title: item.title,
           github: item.github,
-          demo: item.link,
+          demo: item.demo,
           technologies: item.technologies,
           description: item.description
         }));

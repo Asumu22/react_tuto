@@ -12,23 +12,22 @@ import 'swiper/css/pagination';
 
 
 const Testimonials = () => {
-  const [data, setData] = useState([]);
+    const [data, setData] = useState([]);
 
-  useEffect(()=> {
-    axios
-      .get("https://portfolio-backend-end.cyclic.app/api/testimonial")
-      .then(res =>{
-        const formattedData = res.data.data.map(item => ({
-          id: item._id,
-          avatar: item.avatar,
-          name: item.name,
-          review: item.review,
-        }));
-        console.log(`Here am I: ${formattedData}`);
-        setData(formattedData);
-      } )
-      .catch(err => console.error(err));
-  }, [])
+    useEffect(()=> {
+        axios.get("https://dull-gray-meerkat-shoe.cyclic.app/api/testimonial").then(response => {
+            const formattedData = response.data.data.map(item => ({
+                id:item._id,
+                avatar: item.avatar,
+                name: item.name,
+              
+                review: item.review
+            }));
+            setData(formattedData)
+        }).catch(error => {
+            console.log("Error fetching portfolio data:", error);
+        })
+    }, [])
 
 
   return (
