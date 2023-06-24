@@ -7,6 +7,7 @@
 
 - React
 - CSS
+- HTML
 - VS code
 
 ## Let's connect
@@ -16,4 +17,4 @@
 - [Github](https://github.com/Asumu22)
 
 ## Demo video
-![Watch Now](src/components/demo%20video/demo.mp4)
+![Watch Now](../portfolio/src/components/demo%20video/demo.mp4)
